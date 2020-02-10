@@ -117,7 +117,11 @@
                 contentSlider.on('init reInit afterChange', function(event, slick, currentSlide, nextSlide){
                     //currentSlide is undefined on init -- set it to 0 in this case (currentSlide is 0 based)
                     var i = (currentSlide ? currentSlide : 0) + 1;
-                    $counter.text(i);
+                    if(totalSlide < 10){
+                     $counter.text('0'+i);   
+                    }else{
+                        $counter.text(i);
+                    }
                 });
 
                 contentSlider.slick({
